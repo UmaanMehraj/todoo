@@ -5,6 +5,21 @@
       font-family: "DM Sans", sans-serif;
 }
 
+dialog:open{
+  display: flex;
+  box-sizing: border-box;
+  padding: 2rem;
+  inline-size: min(50ch, 90dvi);
+  margin-inline: auto;
+  block-size: 20dvb;
+  inset-block-start: 20dvb;
+  border: 0;
+  border-radius: 10px;
+}
+dialog:open::backdrop{
+    backdrop-filter: blur(5px);
+}
+
 .container{
     display: grid;
     grid-template-columns:  1fr 3fr;

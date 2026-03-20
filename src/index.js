@@ -8,4 +8,11 @@ const t2 = new Task("Say Hi", "Greetings must be yours", "Tr", "High", "blah bla
 p1.appendToDos(t1)
 p1.appendToDos(t2)
 
+const addProjectBtn = document.querySelector('#addProject')
+const projectDialog = document.querySelector('.projectDialog')
+addProjectBtn.addEventListener('click', ()=>{
+    projectDialog.showModal()
+})
+
+
 console.log(p1)
