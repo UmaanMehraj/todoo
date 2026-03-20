@@ -1,4 +1,19 @@
+export class Project{
+    constructor(name, id){
+        this.name = name
+        this.id = id
+        this.toDos= []
+    }
+
+    appendToDos(task){
+        this.toDos.push(task)
+    }
+}
+
+
+
 export class Task{
+    status = false
     constructor(title, description, dueDate, priority, notes){
         this.title = title
         this.description = description
@@ -7,5 +22,11 @@ export class Task{
         this.notes = notes
     }
 
+    changePriority(newPriority){
+        this.priority = newPriority
+    }
+    markAsComplete(){
+        this.status = true
+    }
 }
 

@@ -1,7 +1,11 @@
 import "./styles.css"
-import {Task} from "./tasks.js"
+import {Task, Project} from "./tasks.js"
 
-const obj1 =new Task("Hw", "I have to do maths h/w", "12-08-2026", 1 , "Blah Blah Blah")
-console.log(obj1)
+const p1 = new Project("Foo", 1)
+const t1 = new Task("Say Hi", "Greetings must be yours", "Tr", "High", "blah blah blah")
+const t2 = new Task("Say Hi", "Greetings must be yours", "Tr", "High", "blah blah blah")
 
-console.log('Hey Logged!')
+p1.appendToDos(t1)
+p1.appendToDos(t2)
+
+console.log(p1)
