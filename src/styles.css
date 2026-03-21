@@ -19,6 +19,35 @@ dialog:open{
 dialog:open::backdrop{
     backdrop-filter: blur(5px);
 }
+#p-form{
+    display: grid;
+    font-size: 1.1rem;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+.label{
+    grid-column: 1/-1;
+}
+.btn-form{
+    grid-column: 1/-1;
+    display: flex;
+    gap: 9rem;
+    align-items: center;
+}
+.form-btns{
+    height: 3rem;
+    width: 10rem;
+    border-radius: 1rem;
+    border: none;
+}
+.form-btns:hover{
+    border: 1px solid blue;
+}
+#name{
+    height: 1.5rem;
+    width: 22rem;
+}
 
 .container{
     display: grid;
@@ -26,8 +55,27 @@ dialog:open::backdrop{
 }
 
 .sidebar{
+    height: 100vh;
     border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 .main{
     border: 2px solid black;
+}
+.logo{
+    height: 5rem;
+    width: 100%;
+    padding-top: 2rem;
+    font-size: 2rem;
+    border: 2px solid green;
+}
+.button{
+    height: 4rem;
+
+    border: 2px solid black;
+}
+.projects{
+    margin: 2rem;
 }

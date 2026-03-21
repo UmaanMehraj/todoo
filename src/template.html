@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todoo- Tasks noted!</title>
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="logo">ToDoo</div>
+            <div class="logo"><div>
+                Todoo
+            </div></div>
             <div class="button">
                 <button id="addProject">Add Project</button>
                 <dialog class="projectDialog">
-                  <form >
-                    <p>
-                        <label for="name"> Name:
-                            <input type="text">
-                        </label>
-                        <label for="description">ID:
-                            <input type="number">
-                        </label>
-                    </p>
-                    <div>
-                        <button value="cancel" formmethod="dialog">Cancel</button>
-                        <button id="confirmBtn" value="defualt">Confirm</button>
-                    </div>
-                  </form>
+                    <form id="p-form">
+                        <div class="label">
+                            <label for="name"> Name:
+                                <input type="text" id="name" required>
+                            </label>
+                        </div>
+                        <div class="btn-form">
+                            <button class="form-btns" value="cancel" formmethod="dialog">Cancel</button>
+                            <button class="form-btns" id="confirmBtn" value="defualt">Confirm</button>
+                        </div>
+                    </form>
                 </dialog>
             </div>
             <div class="projects">
@@ -47,4 +48,5 @@
         </div>
     </div>
 </body>
+
 </html>

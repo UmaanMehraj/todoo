@@ -1,7 +1,7 @@
 export class Project{
-    constructor(name, id){
+    constructor(name){
         this.name = name
-        this.id = id
+        this.id = self.crypto.randomUUID()
         this.toDos= []
     }
 
