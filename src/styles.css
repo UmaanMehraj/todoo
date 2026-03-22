@@ -5,6 +5,14 @@
     font-family: "DM Sans", sans-serif;
 
 }
+button{
+    border: none;
+    box-shadow: 2px 2px 5px 2px gray;
+
+}
+button:hover{
+    box-shadow: 2px 2px 10px 2px gray;
+}
 
 dialog:open{
   display: flex;
@@ -96,14 +104,13 @@ dialog:open::backdrop{
 }
 #addProject{
     border: none;
-    box-shadow: 2px 2px 5px 2px gray;
     height: 2rem;
     width: 15rem;
 }
 #addProject:hover{
     height: 2.1rem;
     width: 15.2rem;
-    box-shadow: 2px 2px 10px 2px gray;
+
 }
 
 .project{
@@ -123,12 +130,12 @@ dialog:open::backdrop{
     height: 1.8rem;
     width: 20rem;
     border: none;
-    box-shadow: 2px 2px 5px 2px gray;
+
 }
 .content > div > button:hover{
     height: 2rem;
     width: 20rem;
-    box-shadow: 2px 2px 10px 2px gray;
+
 }
 .projects, .footer{
     margin: 2rem;
@@ -156,6 +163,7 @@ a:hover{
     font-size: 2rem;
     font-weight: bold;
     padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 .tasks{
     display: flex;
@@ -168,4 +176,15 @@ a:hover{
     background-color: #2d1c42;
     border-radius: 1rem;
     box-shadow: 2px 0px 20px 8px black;
+}
+.add{
+    padding: 1rem;
+}
+#addTask{
+    height: 1.5rem;
+    width: 10rem; 
+}
+#addTask:hover{
+    height: 1.6rem;
+    width: 10.2rem;
 }

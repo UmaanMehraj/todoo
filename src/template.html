@@ -39,7 +39,7 @@
                     <form id="p-form">
                         <div class="label">
                             <label for="name"> Name:
-                                <input type="text" id="name" required>
+                                <input type="text" id="name" name="name" required>
                             </label>
                         </div>
                         <div class="btn-form">
@@ -75,6 +75,42 @@
         <div class="main">
             <div class="heading">
                 Tasks
+            </div>
+            <div class="add">
+                <button id="addTask">Add Task</button>
+                <dialog class="taskDialog">
+                    <form class="t-form">
+                        <div class="label">
+                            <label for="title">Title: 
+                                <input type="text" id="title" name="title" required>
+                            </label>
+                        </div>
+                        <div class="label">
+                            <label for="description"> Description:
+                                <input type="text" id="description" name="description" required>
+                            </label>
+                        </div>
+                        <div class="label">
+                            <label for="date">Due Date:
+                                <input type="date" name="date" id="date">
+                            </label>
+                        </div>
+                        <div class="label">
+                            <label for="priority">Priority
+                                <select name="priority">
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="label">
+                            <label for="notes">Notes: 
+                                <input type="text" name="notes" >
+                            </label>
+                        </div>
+                    </form>
+                </dialog>
             </div>
             <div class="tasks">
                 <div>T1</div>

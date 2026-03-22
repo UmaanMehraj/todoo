@@ -14,5 +14,9 @@ addProjectBtn.addEventListener('click', ()=>{
     projectDialog.showModal()
 })
 
-
+const addTaskBtn = document.querySelector('#addTask')
+const taskDialog = document.querySelector('.taskDialog')
+addTaskBtn.addEventListener('click', ()=>{
+    taskDialog.showModal()
+})
 console.log(p1)
