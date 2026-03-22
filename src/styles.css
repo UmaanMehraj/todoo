@@ -3,12 +3,14 @@
     margin: 0;
     padding: 0;
     font-family: "DM Sans", sans-serif;
-    color: white;
+
 }
 
 dialog:open{
   display: flex;
   box-sizing: border-box;
+  justify-content: center;
+  color: black;
   padding: 2rem;
   inline-size: min(50ch, 90dvi);
   margin-inline: auto;
@@ -52,6 +54,7 @@ dialog:open::backdrop{
 
 .container{
     display: grid;
+    color: white;
     grid-template-columns:  1fr 3fr;
 }
 
@@ -70,11 +73,19 @@ dialog:open::backdrop{
 
 }
 .logo{
+    display: flex;
+    align-items: center;
     height: 5rem;
     width: 100%;
     padding-top: 2rem;
+    padding-left: 1rem;
     font-size: 2rem;
 
+}
+
+#logo-img{
+    height: 4rem;
+    width: 4rem;
 }
 .button{
     display: flex;
@@ -84,16 +95,77 @@ dialog:open::backdrop{
 
 }
 #addProject{
-    color: black;
+    border: none;
+    box-shadow: 2px 2px 5px 2px gray;
     height: 2rem;
     width: 15rem;
 }
+#addProject:hover{
+    height: 2.1rem;
+    width: 15.2rem;
+    box-shadow: 2px 2px 10px 2px gray;
+}
 
+.project{
+    font-size: 1.8rem;
+}
+.projects{
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.content > div > button{
+    height: 1.8rem;
+    width: 20rem;
+    border: none;
+    box-shadow: 2px 2px 5px 2px gray;
+}
+.content > div > button:hover{
+    height: 2rem;
+    width: 20rem;
+    box-shadow: 2px 2px 10px 2px gray;
+}
 .projects, .footer{
     margin: 2rem;
+}
+#phead{
+    font-size: 1.7rem;
 }
 
 .projects{
     height: 55vh
+}
+a{
+    color: red;
+}
+a:hover{
+    color: royalblue;
+}
+.main{
+    display: flex;
+    align-items: center;
+}
+.heading{
+    display: flex;
+    height: 5vh;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+.tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    margin: 2rem;
+    height: 40vw;
+    width: 90vh;
+    background-color: #2d1c42;
+    border-radius: 1rem;
+    box-shadow: 2px 0px 20px 8px black;
 }
