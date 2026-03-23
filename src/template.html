@@ -61,7 +61,7 @@
                     <div>
                         <button>Zzz</button>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="footer">
@@ -81,11 +81,9 @@
                 <dialog class="taskDialog">
                     <form class="t-form">
                         <div class="label">
-                            <label for="title">Title: 
+                            <label for="title">Title:
                                 <input type="text" id="title" name="title" required>
                             </label>
-                        </div>
-                        <div class="label">
                             <label for="description"> Description:
                                 <input type="text" id="description" name="description" required>
                             </label>
@@ -93,6 +91,9 @@
                         <div class="label">
                             <label for="date">Due Date:
                                 <input type="date" name="date" id="date">
+                            </label>
+                            <label for="notes">Notes:
+                                <input type="text" name="notes">
                             </label>
                         </div>
                         <div class="label">
@@ -104,10 +105,9 @@
                                 </select>
                             </label>
                         </div>
-                        <div class="label">
-                            <label for="notes">Notes: 
-                                <input type="text" name="notes" >
-                            </label>
+                        <div class="btn-form">
+                            <button class="form-btns" value="cancel" formmethod="dialog">Cancel</button>
+                            <button class="form-btns" id="confirmBtn" value="defualt">Confirm</button>
                         </div>
                     </form>
                 </dialog>
