@@ -1,20 +1,26 @@
 import "./styles.css"
 import {Task, Project} from "./tasks.js"
+import { appendProject } from "./domFunctions.js"
 
-const p1 = new Project("Foo", 1)
-const t1 = new Task("Say Hi", "Greetings must be yours", "Tr", "High", "blah blah blah")
-const t2 = new Task("Say Hi", "Greetings must be yours", "Tr", "High", "blah blah blah")
-
-p1.appendToDos(t1)
-p1.appendToDos(t2)
 
 const addProjectBtn = document.querySelector('#addProject')
 const projectConfirmBtn = document.querySelector('#projectConfirmBtn')
 const projectDialog = document.querySelector('.projectDialog')
+const projectName = document.querySelector('#name')
 addProjectBtn.addEventListener('click', ()=>{
     projectDialog.showModal()
 })
+projectConfirmBtn.addEventListener('click', (e)=>{
+    e.preventDefault()
+    projectDialog.close()
+})
 
+projectDialog.addEventListener('close', ()=>{
+    const p1 = new Project(projectName.value)
+   if(p1.name !== ''){
+    appendProject(p1)
+   }
+})
 
 const addTaskBtn = document.querySelector('#addTask')
 const taskDialog = document.querySelector('.taskDialog')
@@ -27,11 +33,6 @@ taskConfirmBtn.addEventListener('click', (e)=>{
     taskDialog.close()
 })
 
-projectConfirmBtn.addEventListener('click', (e)=>{
-    e.preventDefault()
-    projectDialog.close()
-})
 
 
 
-console.log(p1)
