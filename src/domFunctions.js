@@ -15,6 +15,7 @@ export function appendProject(Project) {
 }
 
 export function displayTask(Project) {
+    const taskDiv = document.querySelector('.tasks')
     Project.todos.array.forEach(task => {
         const parentDiv = document.createElement('div')
 
@@ -32,7 +33,9 @@ export function displayTask(Project) {
 
         btnDiv.append(viewBtn)
 
-        
+        parentDiv.append(nameDiv, btnDiv)
+
+        taskDiv.append(parentDiv)
 
     });
 }

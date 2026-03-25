@@ -1,6 +1,6 @@
 import "./styles.css"
 import {Task, Project} from "./tasks.js"
-import { appendProject } from "./domFunctions.js"
+import { appendProject, displayTask } from "./domFunctions.js"
 
 
 const addProjectBtn = document.querySelector('#addProject')
