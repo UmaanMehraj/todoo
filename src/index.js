@@ -20,7 +20,9 @@ projectDialog.addEventListener('close', ()=>{
     p1.toDos.push(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
    if(p1.name !== ''){
     appendProject(p1)
+    appendTask(p1)
    }
+
 })
 
 const addTaskBtn = document.querySelector('#addTask')
@@ -35,7 +37,13 @@ taskConfirmBtn.addEventListener('click', (e)=>{
 })
 
 
-// const p2 = new Project('foobar')
+const p2 = new Project('foobar')
+p2.appendToDos(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
+p2.appendToDos(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
+p2.appendToDos(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
+p2.toDos.forEach((task)=>{
+    console.log(task)
+})
 
 
 
