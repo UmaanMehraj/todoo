@@ -1,6 +1,6 @@
 import "./styles.css"
 import {Task, Project} from "./tasks.js"
-import { appendProject, appendTask } from "./domFunctions.js"
+import { appendProject, appendTask, displayTask } from "./domFunctions.js"
 
 
 const addProjectBtn = document.querySelector('#addProject')
@@ -20,7 +20,6 @@ projectDialog.addEventListener('close', ()=>{
     p1.toDos.push(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
    if(p1.name !== ''){
     appendProject(p1)
-    appendTask(p1)
    }
 
 })

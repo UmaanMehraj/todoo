@@ -14,7 +14,7 @@ export function appendProject(Project) {
     content.append(newDiv)
 }
 
-export function appendTask(Project) {
+export function displayTask(Project) {
     const taskDiv = document.querySelector('.tasks')
     Project.toDos.forEach(task => {
         const parentDiv = document.createElement('div')
