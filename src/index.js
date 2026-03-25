@@ -1,6 +1,6 @@
 import "./styles.css"
 import {Task, Project} from "./tasks.js"
-import { appendProject, displayTask } from "./domFunctions.js"
+import { appendProject, appendTask } from "./domFunctions.js"
 
 
 const addProjectBtn = document.querySelector('#addProject')
@@ -17,6 +17,7 @@ projectConfirmBtn.addEventListener('click', (e)=>{
 
 projectDialog.addEventListener('close', ()=>{
     const p1 = new Project(projectName.value)
+    p1.toDos.push(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
    if(p1.name !== ''){
     appendProject(p1)
    }
@@ -33,6 +34,8 @@ taskConfirmBtn.addEventListener('click', (e)=>{
     taskDialog.close()
 })
 
+
+// const p2 = new Project('foobar')
 
 
 
