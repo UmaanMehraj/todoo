@@ -1,6 +1,6 @@
 import viewImage from "./img/view.png"
 import deleteImage from "./img/delete.png"
-import editImage from "./img/delete.png"
+import editImage from "./img/edit.png"
 
 
 export function appendProject(Project) {
@@ -14,9 +14,8 @@ export function appendProject(Project) {
     content.append(newDiv)
 }
 
-export function displayTask(Project) {
+export function displayTask(task) {
     const taskDiv = document.querySelector('.tasks')
-    Project.toDos.forEach(task => {
         const parentDiv = document.createElement('div')
 
         const nameDiv = document.createElement('div')
@@ -31,11 +30,22 @@ export function displayTask(Project) {
         viewImg.src = viewImage
         viewBtn.append(viewImg)
 
-        btnDiv.append(viewBtn)
+        const delteBtn = document.createElement('button')
+        const dltImg = document.createElement('img')
+        dltImg.src = deleteImage
+        delteBtn.append(dltImg)
+
+        const editBtn = document.createElement('button')
+        const editImg = document.createElement('img')
+        editImg.src = editImage
+        editBtn.append(editImg)
+
+
+        btnDiv.append(viewBtn, delteBtn, editBtn)
 
         parentDiv.append(nameDiv, btnDiv)
 
         taskDiv.append(parentDiv)
 
-    });
+
 }

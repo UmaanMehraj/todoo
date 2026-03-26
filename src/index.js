@@ -39,7 +39,9 @@ addTaskBtn.addEventListener('click', ()=>{
 })
 taskDialog.addEventListener('close', ()=>{
     const task = new Task(tasktTitle.value, taskDesc.value, taskDate.value, taskPriority.value, taskNotes.value)
-    console.log(task)
+    if(task){
+        displayTask(task)
+    }
 })
 taskConfirmBtn.addEventListener('click', (e)=>{
     e.preventDefault()
