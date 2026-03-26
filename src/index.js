@@ -1,6 +1,6 @@
 import "./styles.css"
 import {Task, Project} from "./tasks.js"
-import { appendProject, appendTask, displayTask } from "./domFunctions.js"
+import { appendProject, displayTask } from "./domFunctions.js"
 
 
 const addProjectBtn = document.querySelector('#addProject')
@@ -17,7 +17,6 @@ projectConfirmBtn.addEventListener('click', (e)=>{
 
 projectDialog.addEventListener('close', ()=>{
     const p1 = new Project(projectName.value)
-    p1.toDos.push(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
    if(p1.name !== ''){
     appendProject(p1)
    }
@@ -27,22 +26,26 @@ projectDialog.addEventListener('close', ()=>{
 const addTaskBtn = document.querySelector('#addTask')
 const taskDialog = document.querySelector('.taskDialog')
 const taskConfirmBtn = document.querySelector('#taskConfirmBtn')
+
+const tasktTitle = document.querySelector('#title')
+const taskDesc = document.querySelector('#description')
+const taskDate = document.querySelector('#date')
+const taskNotes = document.querySelector('#notes')
+const taskPriority = document.querySelector('#priority')
+
+
 addTaskBtn.addEventListener('click', ()=>{
     taskDialog.showModal()
+})
+taskDialog.addEventListener('close', ()=>{
+    const task = new Task(tasktTitle.value, taskDesc.value, taskDate.value, taskPriority.value, taskNotes.value)
+    console.log(task)
 })
 taskConfirmBtn.addEventListener('click', (e)=>{
     e.preventDefault()
     taskDialog.close()
 })
 
-
-const p2 = new Project('foobar')
-p2.appendToDos(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
-p2.appendToDos(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
-p2.appendToDos(new Task('hey', 'blah', '12-02-33', 'low', 'mehhh'))
-p2.toDos.forEach((task)=>{
-    console.log(task)
-})
 
 
 
