@@ -9,6 +9,7 @@ export function appendProject(Project) {
     const btn = document.createElement('button')
 
     btn.innerText = Project.name
+    btn.setAttribute('class', 'project')
 
     newDiv.appendChild(btn)
     content.append(newDiv)

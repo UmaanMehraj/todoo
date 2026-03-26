@@ -49,5 +49,8 @@ taskConfirmBtn.addEventListener('click', (e)=>{
 })
 
 
+const projectBtns = document.querySelectorAll('.project')
+console.log(projectBtns)
+
 
 

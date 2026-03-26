@@ -135,9 +135,9 @@ dialog:open::backdrop{
 
 }
 
-.project{
+/* .project{
     font-size: 1.8rem;
-}
+} */
 .projects{
     display: grid;
     grid-template-rows: 1fr 6fr;
