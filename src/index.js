@@ -16,9 +16,9 @@ projectConfirmBtn.addEventListener('click', (e)=>{
 })
 
 projectDialog.addEventListener('close', ()=>{
-    const p1 = new Project(projectName.value)
-   if(p1.name !== ''){
-    appendProject(p1)
+    const project = new Project(projectName.value)
+   if(project.name !== ''){
+    appendProject(project)
    }
 
 })
@@ -49,8 +49,6 @@ taskConfirmBtn.addEventListener('click', (e)=>{
 })
 
 
-const projectBtns = document.querySelectorAll('.project')
-console.log(projectBtns)
 
 
 
