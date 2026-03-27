@@ -24,7 +24,7 @@ export function displayTask(task) {
 
         const nameDiv = document.createElement('div')
         nameDiv.setAttribute('class', 'name')
-        nameDiv.innerText = task.name
+        nameDiv.innerText = task.title
 
         const btnDiv = document.createElement('div')
         btnDiv.setAttribute('class', 'btns')

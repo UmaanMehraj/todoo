@@ -128,16 +128,16 @@ dialog:open::backdrop{
     border: none;
     height: 2rem;
     width: 15rem;
+    transition: transform 0.2s ease; 
 }
 #addProject:hover{
     height: 2.1rem;
     width: 15.2rem;
+    transform: scale(1.05);
+    cursor: pointer;
 
 }
 
-/* .project{
-    font-size: 1.8rem;
-} */
 .projects{
     display: grid;
     grid-template-rows: 1fr 6fr;
@@ -152,11 +152,12 @@ dialog:open::backdrop{
     height: 1.8rem;
     width: 20rem;
     border: none;
+    transition: transform 0.2s ease;
 
 }
 .content > div > button:hover{
-    height: 2rem;
-    width: 20rem;
+    transform: scale(1.02);
+
 
 }
 .projects, .footer{
@@ -205,10 +206,11 @@ a:hover{
 #addTask{
     height: 1.5rem;
     width: 10rem; 
+    transition: transform 0.2s ease;
 }
 #addTask:hover{
-    height: 1.6rem;
-    width: 10.2rem;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .tasks > div{
@@ -222,12 +224,17 @@ a:hover{
     box-shadow: 0px 4px 10px 3px rgb(207, 152, 152);
     height: 4rem;
     width: 70%;
+    transition: transform 0.2s ease; 
+}
+.tasks >div:hover{
+     transform: scale(1.03); 
 }
 .btns > button{
     background-color:#3a3e6c;
     height: 2rem;
     width: 3rem;
     border-radius: 20rem;
+    
 }
 .btns > button:hover{
     height: 2.2rem;
