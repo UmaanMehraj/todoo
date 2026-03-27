@@ -2,13 +2,16 @@ import viewImage from "./img/view.png"
 import deleteImage from "./img/delete.png"
 import editImage from "./img/edit.png"
 
+export let projects = []
 
 export function appendProject(Project) {
+    projects.push(Project)
     const content = document.querySelector('.content')
     const newDiv = document.createElement('div')
     const btn = document.createElement('button')
 
     btn.innerText = Project.name
+    btn.dataset.id = Project.id
     btn.setAttribute('class', 'project')
 
     newDiv.appendChild(btn)
