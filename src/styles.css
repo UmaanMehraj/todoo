@@ -227,7 +227,7 @@ a:hover{
     transition: transform 0.2s ease; 
 }
 .tasks >div:hover{
-     transform: scale(1.03); 
+     transform: scale(1.01); 
 }
 .btns > button{
     background-color:#3a3e6c;
