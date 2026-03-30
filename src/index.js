@@ -2,6 +2,12 @@ import './styles.css';
 import { Task, Project } from './tasks.js';
 import { projects, appendProject, displayTask } from './domFunctions.js';
 
+
+// Default Project
+const foo = new Project('foo')
+appendProject(foo)
+console.log(projects)
+
 const addProjectBtn = document.querySelector('#addProject');
 const projectConfirmBtn = document.querySelector('#projectConfirmBtn');
 const projectDialog = document.querySelector('.projectDialog');
@@ -18,8 +24,6 @@ projectDialog.addEventListener('close', () => {
   const project = new Project(projectName.value);
   if (project.name !== '') {
     appendProject(project);
-    console.log(projects);
-    return project;
   }
 });
 
@@ -49,3 +53,14 @@ taskConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
   taskDialog.close();
 });
+
+const projectBtns = document.querySelectorAll('.project')
+projectBtns.forEach((btn)=>{
+  btn.addEventListener('click', ()=>{
+    projects.forEach((project)=>{
+      if(btn.dataset.id === project.id){
+        displayTask(project)
+      }
+    })
+  })
+})
