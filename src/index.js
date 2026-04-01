@@ -6,7 +6,9 @@ import { projects, appendProject, displayTask } from './domFunctions.js';
 // Default Project
 const foo = new Project('foo')
 appendProject(foo)
-console.log(projects)
+const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs')
+foo.toDos.push(baz)
+
 
 const addProjectBtn = document.querySelector('#addProject');
 const projectConfirmBtn = document.querySelector('#projectConfirmBtn');
@@ -48,6 +50,7 @@ taskDialog.addEventListener('close', () => {
       taskPriority.value,
       taskNotes.value,
     );
+    
 });
 taskConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();

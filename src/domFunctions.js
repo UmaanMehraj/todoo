@@ -54,6 +54,6 @@ export function displayTask(Project) {
     })
 }
 
-export function appendTask(task){
+export function appendTask(Project, task){
     
 }
