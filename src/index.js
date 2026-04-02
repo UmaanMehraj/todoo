@@ -67,3 +67,5 @@ projectBtns.forEach((btn)=>{
     })
   })
 })
+
+export const maintaskDiv = document.querySelector('.tasks')

@@ -1,8 +1,10 @@
 import viewImage from "./img/view.png"
 import deleteImage from "./img/delete.png"
 import editImage from "./img/edit.png"
+import { maintaskDiv } from "./index.js"
 
 export let projects = []
+
 
 export function appendProject(Project) {
     projects.push(Project)
@@ -19,6 +21,7 @@ export function appendProject(Project) {
 }
 
 export function displayTask(Project) {
+    maintaskDiv.innerText = ''
     Project.toDos.forEach((task)=>{
         const taskDiv = document.querySelector('.tasks')
         const parentDiv = document.createElement('div')
@@ -54,6 +57,8 @@ export function displayTask(Project) {
     })
 }
 
-export function appendTask(Project, task){
-    
+export function appendTask(projectsArray, task){
+    projectsArray.forEach((project)=>{
+        // project.appendToDos(task)
+    })
 }
