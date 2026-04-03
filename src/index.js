@@ -6,8 +6,20 @@ import { projects, appendProject, displayTask } from './domFunctions.js';
 // Default Project
 const foo = new Project('foo')
 appendProject(foo)
-const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs')
+const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0])
 foo.toDos.push(baz)
+
+function appendProjectList(projects){
+  const selectProject = document.querySelector('#selectProject')
+  projects.forEach((project)=>{
+    const option = document.createElement('option')
+    option.value = project.name
+    option.innerText = project.name
+
+    selectProject.append(option)
+  })
+}
+
 
 
 const addProjectBtn = document.querySelector('#addProject');
@@ -20,6 +32,7 @@ addProjectBtn.addEventListener('click', () => {
 projectConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
   projectDialog.close();
+ 
 });
 
 projectDialog.addEventListener('close', () => {
@@ -27,6 +40,7 @@ projectDialog.addEventListener('close', () => {
   if (project.name !== '') {
     appendProject(project);
   }
+   appendProjectList(projects)
 });
 
 const addTaskBtn = document.querySelector('#addTask');
@@ -38,6 +52,9 @@ const taskDesc = document.querySelector('#description');
 const taskDate = document.querySelector('#date');
 const taskNotes = document.querySelector('#notes');
 const taskPriority = document.querySelector('#priority');
+const taskProject = document.querySelector('#selectProject')
+
+const projectBtns = document.querySelectorAll('.project')
 
 addTaskBtn.addEventListener('click', () => {
   taskDialog.showModal();
@@ -49,15 +66,16 @@ taskDialog.addEventListener('close', () => {
       taskDate.value,
       taskPriority.value,
       taskNotes.value,
-    );
-    
+      taskProject.value
+    );   
+    console.log(projects)
 });
 taskConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
   taskDialog.close();
 });
 
-const projectBtns = document.querySelectorAll('.project')
+
 projectBtns.forEach((btn)=>{
   btn.addEventListener('click', ()=>{
     projects.forEach((project)=>{
@@ -69,3 +87,8 @@ projectBtns.forEach((btn)=>{
 })
 
 export const maintaskDiv = document.querySelector('.tasks')
+
+
+
+
+
