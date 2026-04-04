@@ -1,28 +1,23 @@
 import './styles.css';
 import { Task, Project } from './tasks.js';
-import { projects, appendProject, displayTask, appendTask } from './domFunctions.js';
-
+import { projects, appendProject, displayTask } from './domFunctions.js';
 
 // Default Project
-const foo = new Project('foo')
-appendProject(foo)
-appendProjectList(foo)
-const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0])
-foo.toDos.push(baz)
+const foo = new Project('foo');
+appendProject(foo);
+appendProjectList(foo);
+const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0]);
+foo.toDos.push(baz);
+displayTask([projects[0]]);
 
+function appendProjectList(project) {
+  const selectProject = document.querySelector('#selectProject');
+  const option = document.createElement('option');
+  option.value = project.name;
+  option.innerText = project.name;
 
-
-function appendProjectList(project){
-  const selectProject = document.querySelector('#selectProject')
-    const option = document.createElement('option')
-    option.value = project.name
-    option.innerText = project.name
-
-    selectProject.append(option)
-  
+  selectProject.append(option);
 }
-
-
 
 const addProjectBtn = document.querySelector('#addProject');
 const projectConfirmBtn = document.querySelector('#projectConfirmBtn');
@@ -37,7 +32,6 @@ addProjectBtn.addEventListener('click', () => {
 projectConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
   projectDialog.close();
- 
 });
 
 projectDialog.addEventListener('close', () => {
@@ -45,19 +39,18 @@ projectDialog.addEventListener('close', () => {
   if (project.name !== '') {
     appendProject(project);
   }
-   appendProjectList(project)
-   projectBtns = document.querySelectorAll('.project')
+  appendProjectList(project);
+  projectBtns = document.querySelectorAll('.project');
 
-
-   projectBtns.forEach((btn)=>{
-  btn.addEventListener('click', ()=>{
-    projects.forEach((project)=>{
-      if(btn.dataset.id === project.id){
-        displayTask(project)
-      }
-    })
-  })
-})
+  projectBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      projects.forEach((project) => {
+        if (btn.dataset.id === project.id) {
+          displayTask(project);
+        }
+      });
+    });
+  });
 });
 
 const addTaskBtn = document.querySelector('#addTask');
@@ -69,52 +62,40 @@ const taskDesc = document.querySelector('#description');
 const taskDate = document.querySelector('#date');
 const taskNotes = document.querySelector('#notes');
 const taskPriority = document.querySelector('#priority');
-const taskProject = document.querySelector('#selectProject')
-
-
+const taskProject = document.querySelector('#selectProject');
 
 addTaskBtn.addEventListener('click', () => {
   taskDialog.showModal();
 });
 taskDialog.addEventListener('close', () => {
-    const task = new Task(
-      tasktTitle.value,
-      taskDesc.value,
-      taskDate.value,
-      taskPriority.value,
-      taskNotes.value,
-      taskProject.value
-    );   
+  const task = new Task(
+    tasktTitle.value,
+    taskDesc.value,
+    taskDate.value,
+    taskPriority.value,
+    taskNotes.value,
+    taskProject.value,
+  );
 
-    projects.forEach((prj)=>{
-      if(prj.name === task.project){
-        prj.appendToDos(task)
-      }
-    })
- 
+  projects.forEach((prj) => {
+    if (prj.name === task.project) {
+      prj.appendToDos(task);
+    }
+  });
 });
 taskConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
   taskDialog.close();
 });
 
-
-projectBtns.forEach((btn)=>{
-  btn.addEventListener('click', ()=>{
-    projects.forEach((project)=>{
-      if(btn.dataset.id === project.id){
-        displayTask(project)
+projectBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    projects.forEach((project) => {
+      if (btn.dataset.id === project.id) {
+        displayTask(project);
       }
-    })
-  })
-})
+    });
+  });
+});
 
-
-
-export const maintaskDiv = document.querySelector('.tasks')
-
-
-
-
-
-
+export const maintaskDiv = document.querySelector('.tasks');

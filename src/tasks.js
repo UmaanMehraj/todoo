@@ -18,7 +18,7 @@ export class Task {
     this.dueDate = dueDate;
     this.priority = priority;
     this.notes = notes;
-    this.project = project
+    this.project = project;
   }
 
   changePriority(newPriority) {
