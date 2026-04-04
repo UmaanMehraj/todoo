@@ -8,7 +8,6 @@ appendProject(foo);
 appendProjectList(foo);
 const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0]);
 foo.toDos.push(baz);
-displayTask([projects[0]]);
 
 function appendProjectList(project) {
   const selectProject = document.querySelector('#selectProject');
