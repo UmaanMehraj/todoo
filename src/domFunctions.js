@@ -57,8 +57,8 @@ export function displayTask(Project) {
     })
 }
 
-export function appendTask(projectsArray, task){
-    projectsArray.forEach((project)=>{
-        // project.appendToDos(task)
-    })
+export function appendTask(project, task){
+    if(! task in project){
+        project.appendToDos(task)
+    }
 }

@@ -1,6 +1,6 @@
 import './styles.css';
 import { Task, Project } from './tasks.js';
-import { projects, appendProject, displayTask } from './domFunctions.js';
+import { projects, appendProject, displayTask, appendTask } from './domFunctions.js';
 
 
 // Default Project
@@ -9,15 +9,16 @@ appendProject(foo)
 const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0])
 foo.toDos.push(baz)
 
-function appendProjectList(projects){
+console.log(projects)
+
+function appendProjectList(project){
   const selectProject = document.querySelector('#selectProject')
-  projects.forEach((project)=>{
     const option = document.createElement('option')
     option.value = project.name
     option.innerText = project.name
 
     selectProject.append(option)
-  })
+  
 }
 
 
@@ -40,7 +41,7 @@ projectDialog.addEventListener('close', () => {
   if (project.name !== '') {
     appendProject(project);
   }
-   appendProjectList(projects)
+   appendProjectList(project)
 });
 
 const addTaskBtn = document.querySelector('#addTask');
@@ -68,7 +69,14 @@ taskDialog.addEventListener('close', () => {
       taskNotes.value,
       taskProject.value
     );   
-    console.log(projects)
+
+    projects.forEach((prj)=>{
+      if(prj.name === task.project){
+        prj.appendToDos(task)
+        console.log(prj)
+      }
+    })
+ 
 });
 taskConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -87,6 +95,7 @@ projectBtns.forEach((btn)=>{
 })
 
 export const maintaskDiv = document.querySelector('.tasks')
+
 
 
 
