@@ -28,6 +28,9 @@ const addProjectBtn = document.querySelector('#addProject');
 const projectConfirmBtn = document.querySelector('#projectConfirmBtn');
 const projectDialog = document.querySelector('.projectDialog');
 const projectName = document.querySelector('#name');
+
+let projectBtns = document.querySelectorAll('.project');
+
 addProjectBtn.addEventListener('click', () => {
   projectDialog.showModal();
 });
@@ -43,6 +46,18 @@ projectDialog.addEventListener('close', () => {
     appendProject(project);
   }
    appendProjectList(project)
+   projectBtns = document.querySelectorAll('.project')
+
+
+   projectBtns.forEach((btn)=>{
+  btn.addEventListener('click', ()=>{
+    projects.forEach((project)=>{
+      if(btn.dataset.id === project.id){
+        displayTask(project)
+      }
+    })
+  })
+})
 });
 
 const addTaskBtn = document.querySelector('#addTask');
@@ -56,7 +71,7 @@ const taskNotes = document.querySelector('#notes');
 const taskPriority = document.querySelector('#priority');
 const taskProject = document.querySelector('#selectProject')
 
-const projectBtns = document.querySelectorAll('.project')
+
 
 addTaskBtn.addEventListener('click', () => {
   taskDialog.showModal();
@@ -93,6 +108,8 @@ projectBtns.forEach((btn)=>{
     })
   })
 })
+
+
 
 export const maintaskDiv = document.querySelector('.tasks')
 
