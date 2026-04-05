@@ -125,7 +125,7 @@ viewBtns.forEach((btn)=>{
   btn.addEventListener('click', ()=>{
   projects.forEach((project)=>{
     project.toDos.forEach((toDo)=>{
-      console.log(toDo)
+      expandTask(toDo)
     })
   })
   })
