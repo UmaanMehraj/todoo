@@ -96,7 +96,6 @@ taskDialog.addEventListener('close', () => {
 
 
   viewBtns.forEach((btn)=>{
-    console.log(btn)
   btn.addEventListener('click', ()=>{
   projects.forEach((project)=>{
     project.toDos.forEach((toDo)=>{

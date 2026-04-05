@@ -85,15 +85,13 @@ export function displayTask(Project) {
   });
 }
 
-export function expandTask(task) {
-  const nameDivs = document.querySelectorAll('.name');
-  nameDivs.forEach((nameDiv) => {
-    if (nameDiv.innerText === task.title) {
-      const parentElem = nameDiv.parentElement
-      console.log(parentElem)
-      // const dialog = document.querySelector(`${parentElem} > dialog`)
-      // console.log(dialog)
-      // dialog.showModal()
+export function expandTask(task){
+  const dialogs = document.querySelectorAll('.viewDialog')
+  dialogs.forEach((dialog)=>{
+    const titleDiv = dialog.firstChild.firstChild
+    titleDiv.innerText = titleDiv.innerText.replace('Task Title: ', '')
+    if(titleDiv.innerText === task.title){
+      dialog.showModal()
     }
-  });
+  })
 }
