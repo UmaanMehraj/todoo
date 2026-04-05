@@ -1,13 +1,22 @@
 import './styles.css';
 import { Task, Project } from './tasks.js';
-import { projects, appendProject, displayTask } from './domFunctions.js';
+import { projects, appendProject, displayTask, expandTask } from './domFunctions.js';
 
-// Default Project
+export const maintaskDiv = document.querySelector('.tasks');
+
+
+
+// Default Project and Task
 const foo = new Project('foo');
 appendProject(foo);
 appendProjectList(foo);
 const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0]);
 foo.toDos.push(baz);
+
+displayTask(foo)
+
+let viewBtns = document.querySelectorAll('#viewBtn')
+
 
 function appendProjectList(project) {
   const selectProject = document.querySelector('#selectProject');
@@ -79,8 +88,23 @@ taskDialog.addEventListener('close', () => {
   projects.forEach((prj) => {
     if (prj.name === task.project) {
       prj.appendToDos(task);
+      displayTask(prj)
     }
   });
+
+  viewBtns = document.querySelectorAll('#viewBtn')
+
+  viewBtns.forEach((btn)=>{
+  btn.addEventListener('click', ()=>{
+  projects.forEach((project)=>{
+    project.toDos.forEach((toDo)=>{
+      console.log(toDo)
+    })
+  })
+  })
+})
+
+
 });
 taskConfirmBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -97,4 +121,15 @@ projectBtns.forEach((btn) => {
   });
 });
 
-export const maintaskDiv = document.querySelector('.tasks');
+viewBtns.forEach((btn)=>{
+  btn.addEventListener('click', ()=>{
+  projects.forEach((project)=>{
+    project.toDos.forEach((toDo)=>{
+      console.log(toDo)
+    })
+  })
+  })
+})
+
+
+
