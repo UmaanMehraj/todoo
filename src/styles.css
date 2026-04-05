@@ -232,3 +232,17 @@ a:hover {
   width: 3rem;
   box-shadow: 4px 4px 40px 4px #2d1c42;
 }
+
+.viewDialog:open{
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  color: black;
+  padding: 2rem;
+  inline-size: min(40ch, 90dvi);
+  margin-inline: auto;
+  block-size: 25dvb;
+  inset-block-start: 25dvb;
+  border: none;
+  border-radius: 10px;
+}

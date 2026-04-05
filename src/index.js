@@ -10,7 +10,7 @@ export const maintaskDiv = document.querySelector('.tasks');
 const foo = new Project('foo');
 appendProject(foo);
 appendProjectList(foo);
-const baz = new Task('baz', 'ggs', 'gg', 'high', 'ggggs', projects[0]);
+const baz = new Task('baz', 'ggs', '12-03-27', 'high', 'ggggs', projects[0]);
 foo.toDos.push(baz);
 
 displayTask(foo)
@@ -94,11 +94,13 @@ taskDialog.addEventListener('close', () => {
 
   viewBtns = document.querySelectorAll('#viewBtn')
 
+
   viewBtns.forEach((btn)=>{
+    console.log(btn)
   btn.addEventListener('click', ()=>{
   projects.forEach((project)=>{
     project.toDos.forEach((toDo)=>{
-      console.log(toDo)
+      expandTask(toDo)
     })
   })
   })

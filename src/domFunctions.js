@@ -59,13 +59,23 @@ export function displayTask(Project) {
     const container = document.createElement('div');
     container.setAttribute('class', 'viewContainer');
 
-    const divOne = document.createElement('div');
-    divOne.innerText = `Task Title: ${task.title}`;
+    const titleDiv = document.createElement('div');
+    titleDiv.innerText = `Task Title: ${task.title}`;
 
-    const divTwo = document.createElement('div');
-    divTwo.innerText = `Due Date: ${task.dueDate}`;
+    const dueDateDiv = document.createElement('div');
+    dueDateDiv.innerText = `Due Date: ${task.dueDate}`;
 
-    container.append(divOne, divTwo);
+    const descriptionDiv = document.createElement('div')
+    descriptionDiv.innerText = `Description: ${task.description}`
+
+    const priorityDiv = document.createElement('div')
+    priorityDiv.innerText = `Priotity: ${task.priority}`
+
+    const notesDiv = document.createElement('div')
+    notesDiv.innerText = `Notes: ${task.notes}`
+    
+
+    container.append(titleDiv, dueDateDiv, descriptionDiv, priorityDiv, notesDiv);
 
     dialog.append(container);
 
@@ -79,8 +89,11 @@ export function expandTask(task) {
   const nameDivs = document.querySelectorAll('.name');
   nameDivs.forEach((nameDiv) => {
     if (nameDiv.innerText === task.title) {
-      const dialog = document.querySelector('.task > dialog')
-      dialog.showModal()
+      const parentElem = nameDiv.parentElement
+      console.log(parentElem)
+      // const dialog = document.querySelector(`${parentElem} > dialog`)
+      // console.log(dialog)
+      // dialog.showModal()
     }
   });
 }
